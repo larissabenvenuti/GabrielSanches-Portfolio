@@ -35,7 +35,7 @@ export default function AboutPanel() {
           >
             <div className={styles.squareImage}>
               <Image
-                src="/assets/images/profile.jpg"
+                src="/assets/images/profile-pic.jpg"
                 alt="Gabriel Sanches"
                 fill
                 unoptimized
