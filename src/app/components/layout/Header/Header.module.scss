@@ -1,0 +1,158 @@
+@import "../../../../styles/variables";
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  z-index: 100;
+  border-bottom: 1px solid $border-hud;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba($bg-color, 0.85);
+  backdrop-filter: blur(10px);
+
+  @include mobile {
+    padding: 1rem 1.5rem; 
+  }
+
+  @include mobile-small {
+    padding: 0.8rem 1rem; 
+  }
+}
+
+.systemInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: $text-muted;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  z-index: 101;
+
+  @include mobile {
+    font-size: 0.75rem;
+    gap: 0.6rem;
+    letter-spacing: 1px;
+  }
+
+  @include mobile-small {
+    font-size: 0.65rem;
+    gap: 0.4rem;
+    letter-spacing: 0.5px;
+  }
+}
+
+.blinkingDot {
+  width: 8px;
+  height: 8px;
+  background-color: $primary-color;
+  border-radius: 50%;
+  box-shadow: 0 0 8px $primary-color;
+  animation: blink 1.5s infinite;
+  @include mobile-small {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.desktopNav {
+  display: flex;
+  gap: 2rem;
+  @include mobile {
+    display: none;
+  }
+}
+
+.hamburgerBtn {
+  display: none;
+  background: transparent;
+  border: 1px solid $primary-color;
+  color: $primary-color;
+  font-family: inherit;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 101;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: $primary-color;
+    color: #000;
+  }
+
+  @include mobile {
+    display: block;
+  }
+  @include mobile-small {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.8rem;
+    letter-spacing: 1px;
+  }
+}
+
+.mobileNavOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba($bg-color, 0.97);
+  backdrop-filter: blur(15px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.navButton {
+  background: transparent;
+  border: none;
+  color: $text-muted;
+  font-family: inherit;
+  font-size: 1rem;
+  letter-spacing: 3px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+
+  .navBrackets {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  &:hover,
+  &.active {
+    color: $primary-color;
+    text-shadow: 0 0 10px rgba(0, 255, 204, 0.4);
+    .navBrackets {
+      opacity: 1;
+    }
+  }
+
+  @include mobile {
+    font-size: 1.5rem;
+  }
+}

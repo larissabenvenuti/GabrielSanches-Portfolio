@@ -1,0 +1,309 @@
+@import "../../../../../styles/variables";
+
+.panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden; 
+  padding: 5rem 10% 3rem 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include laptop {
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 6rem 8% 5rem 8%;
+    justify-content: flex-start;
+    scrollbar-width: thin;
+    scrollbar-color: $border-hud transparent;
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $border-hud;
+      border-radius: 4px;
+    }
+  }
+  @include tablet {
+    position: relative;
+    height: auto;
+    min-height: 100vh;
+    overflow-y: visible;
+    padding: 6rem 8% 5rem 8%;
+  }
+  @include mobile {
+    position: relative;
+    height: auto;
+    min-height: 100vh;
+    overflow-y: visible;
+    padding: 6rem 5% 6rem 5%;
+  }
+  @include mobile-small {
+    padding: 5rem 1rem 6rem 1rem;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  @include mobile-small {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+.subtitle {
+  @include hud-subtitle;
+  margin-bottom: 0;
+}
+.systemStatus {
+  text-align: right;
+  font-size: 0.65rem;
+  color: $text-muted;
+  letter-spacing: 2px;
+  @include mobile-small {
+    text-align: left;
+  }
+}
+.title {
+  @include hud-title;
+  border-bottom: 1px solid $border-hud;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.mainLayout {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  @include laptop {
+    flex-direction: column;
+  }
+}
+
+.contentContainer {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  max-width: 900px;
+  flex: 1;
+  @include mobile {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  flex-shrink: 0;
+  @include tablet {
+    width: 130px;
+    height: 130px;
+  }
+  @include mobile {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+.squareImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid $primary-color;
+  z-index: 2;
+  filter: grayscale(50%) contrast(1.2);
+  background: $bg-darker;
+}
+.imageDecor {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid $border-hud;
+  z-index: 1;
+}
+
+.bioData {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.name {
+  font-size: 2rem;
+  font-weight: bold;
+  color: $white;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  @include tablet {
+    font-size: 1.8rem;
+  }
+  @include mobile {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+}
+
+.manifestoBox {
+  background: $bg-panel;
+  border-left: 2px solid $primary-color;
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
+
+  .boxHeader {
+    display: flex;
+    justify-content: space-between;
+    color: $primary-color;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid $border-hud;
+    padding-bottom: 0.5rem;
+    @include mobile-small {
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+  }
+  p {
+    font-size: 0.85rem;
+    color: $text-light;
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    strong {
+      color: $white;
+      font-weight: 500;
+    }
+    @include mobile {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.statsRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid $border-hud;
+  border-bottom: 1px solid $border-hud;
+  padding: 0.8rem 0;
+  @include mobile {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+
+.statBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  span {
+    font-size: 0.65rem;
+    color: $text-muted;
+    letter-spacing: 2px;
+  }
+  strong {
+    font-size: 1rem;
+    color: $text-main;
+    font-family: sans-serif;
+  }
+}
+
+.connectBtn {
+  background: transparent;
+  color: $primary-color;
+  border: 1px solid $primary-color;
+  padding: 0.4rem 0.8rem;
+  font-family: $font-mono;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover,
+  &.activeBtn {
+    background: $primary-color;
+    color: $bg-color;
+    box-shadow: 0 0 10px $hud-shadow;
+  }
+  @include mobile {
+    width: 100%;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+}
+
+.contactPanel {
+  background: $bg-dark;
+  border: 1px solid $primary-color;
+  padding: 1.2rem;
+  flex-shrink: 0;
+  width: 100%;
+  @media (min-width: 1441px) {
+    width: 280px;
+  }
+}
+
+.contactHeader {
+  font-size: 0.8rem;
+  color: $primary-color;
+  letter-spacing: 2px;
+  border-bottom: 1px solid $border-hud;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.linksGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  @include laptop {
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+  }
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.linkItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.4rem;
+  border-left: 2px solid transparent;
+  transition: all 0.2s;
+  text-decoration: none;
+  span {
+    font-size: 0.6rem;
+    color: $text-muted;
+  }
+  strong {
+    font-size: 0.85rem;
+    color: $white;
+    letter-spacing: 1px;
+  }
+  &:hover {
+    border-left-color: $primary-color;
+    background: $hud-hover;
+    strong {
+      color: $primary-color;
+    }
+  }
+}

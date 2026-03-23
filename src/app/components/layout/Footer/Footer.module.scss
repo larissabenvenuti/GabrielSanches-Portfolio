@@ -1,0 +1,46 @@
+@import "../../../../styles/variables";
+
+.footerInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4rem;
+  font-size: 0.75rem;
+  color: $text-muted;
+  letter-spacing: 2px;
+  z-index: 100;
+  border-top: 1px solid $border-hud;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba($bg-color, 0.85);
+  backdrop-filter: blur(10px);
+
+  @include mobile {
+    padding: 0.8rem 1.5rem;
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: 0.6rem;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+
+  @include mobile-small {
+    padding: 0.6rem 1rem;
+    font-size: 0.55rem;
+    letter-spacing: 0.5px;
+  }
+}
+
+.credit {
+  a {
+    color: $primary-color;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    &:hover {
+      text-shadow: 0 0 8px rgba(0, 255, 204, 0.6);
+      color: #fff;
+    }
+  }
+}
