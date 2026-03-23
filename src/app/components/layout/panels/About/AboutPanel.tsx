@@ -38,6 +38,7 @@ export default function AboutPanel() {
                 src="/assets/images/profile.jpg"
                 alt="Gabriel Sanches"
                 fill
+                unoptimized
                 style={{ objectFit: "cover" }}
               />
             </div>
