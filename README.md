@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# // GABRIEL SANCHES — 3D ARTIST PORTFOLIO
 
-## Getting Started
+Welcome to the official 3D Artist portfolio of Gabriel Sanches. Architected and developed by **Larissa Benvenuti**, this digital experience was designed to showcase Gabriel's creative work, technical skills, and 3D models through a highly immersive, HUD-inspired interface.
 
-First, run the development server:
+## 🌐 Live Preview
+You can explore the fully functional and interactive portfolio here:  
+**[Launch Application](https://ezoyeahhh.vercel.app/)**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Technologies Used
+This project was built with a focus on performance, modern UI/UX, and seamless animations:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* **Next.js:** The core framework chosen for fast routing, optimized performance, and SEO capabilities.
+* **React:** Used to build modular, interactive, and dynamic user interface components.
+* **Framer Motion:** Implemented for fluid page transitions, floating animations, and dynamic state changes.
+* **SCSS / CSS Modules:** Used for scalable, scoped, and highly customized styling, maintaining the complex Cyber/HUD aesthetic.
+* **Sketchfab API:** Integrated via iframe to render high-fidelity, interactive 3D models directly in the browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📂 Features & Sections
+* **Interactive 3D Gallery:** Explore Gabriel's 3D vehicle creations with real-time model rendering. Each project reflects his technique, style, and dedication to continuous improvement.
+* **Skills Matrix:** A detailed, systemic breakdown of his core competencies, software proficiency (like Blender and Substance Painter), and development pipelines.
+* **Artist Profile:** A professional biography detailing his background, manifesto, and direct communication links.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 👩‍💻 Credits
+* **Development & UI/UX Engineering:** Larissa Benvenuti
+* **3D Art, Modeling & Texturing:** Gabriel Sanches
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🔒 Copyright & License
+**All Rights Reserved.**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is under strict copyright protection. All rights regarding the source code, design interface, visual content, 3D models, and any other elements present in this repository are the exclusive property of **Larissa Benvenuti** (Portfolio Developer) and **Gabriel Sanches** (3D Artist). 
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The reproduction, distribution, modification, public display, or commercial use—whether total or partial—without the express written authorization of the copyright holders is strictly prohibited.
