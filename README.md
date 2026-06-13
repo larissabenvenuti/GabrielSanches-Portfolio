@@ -4,7 +4,7 @@ Welcome to the official 3D Artist portfolio of Gabriel Sanches. Architected and 
 
 ## 🌐 Live Preview
 You can explore the fully functional and interactive portfolio here:  
-**[Launch Application](https://ezoyeahhh.vercel.app/)**
+**[Launch Application](https://gabriel-sanches-portfolio.vercel.app/)**
 
 ---
 
