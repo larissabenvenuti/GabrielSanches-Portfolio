@@ -1,0 +1,218 @@
+@import "../../../../../styles/variables";
+
+.panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  padding: 5rem 10% 3rem 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include laptop {
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 6rem 8% 5rem 8%;
+    justify-content: flex-start;
+    scrollbar-width: thin;
+    scrollbar-color: $border-hud transparent;
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $border-hud;
+      border-radius: 4px;
+    }
+  }
+  @include tablet {
+    position: relative;
+    height: auto;
+    min-height: 100vh;
+    overflow-y: visible;
+    padding: 6rem 8% 5rem 8%;
+  }
+  @include mobile {
+    position: relative;
+    height: auto;
+    min-height: 100vh;
+    overflow-y: visible;
+    padding: 6rem 5% 6rem 5%;
+  }
+  @include mobile-small {
+    padding: 5rem 1rem 6rem 1rem;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  @include mobile-small {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+.subtitle {
+  @include hud-subtitle;
+  margin-bottom: 0;
+}
+.systemStatus {
+  text-align: right;
+  font-size: 0.65rem;
+  color: $text-muted;
+  letter-spacing: 2px;
+  @include mobile-small {
+    text-align: left;
+  }
+}
+.title {
+  @include hud-title;
+  border-bottom: 1px solid $border-hud;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.matrixContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 900px;
+}
+
+.mainSkills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  @include tablet {
+    gap: 1rem;
+  }
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.skillCard {
+  background: $bg-panel;
+  border: 1px solid $border-hud;
+  padding: 1.2rem;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid $primary-color;
+    border-left: 2px solid $primary-color;
+  }
+
+  h3 {
+    color: $white;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    @include mobile {
+      font-size: 1.2rem;
+    }
+  }
+  p {
+    font-size: 0.8rem;
+    color: $text-light;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    min-height: 35px;
+    @include mobile {
+      min-height: auto;
+    }
+  }
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  color: $text-muted;
+  .iconPlaceholder {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: $primary-color;
+  }
+  .techRef {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+  }
+}
+
+.proficiencyLog {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  padding-top: 0.8rem;
+  border-top: 1px dashed $border-hud;
+  span {
+    color: $text-muted;
+  }
+  .levelHighlight {
+    font-family: $font-mono;
+    font-size: 0.85rem;
+    color: $primary-color;
+    text-shadow: 0 0 5px $hud-shadow;
+  }
+  @include mobile-small {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    span {
+      font-size: 0.6rem;
+    }
+    .levelHighlight {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.secondaryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gridItem {
+  background: $bg-darker;
+  border: 1px solid $border-hud;
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  .itemLabel {
+    font-size: 0.6rem;
+    color: $text-muted;
+    letter-spacing: 2px;
+  }
+  h4 {
+    color: $text-main;
+    font-size: 0.9rem;
+  }
+  .levelText {
+    font-size: 0.65rem;
+    color: $primary-color;
+    text-align: right;
+    margin-top: auto;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+}
