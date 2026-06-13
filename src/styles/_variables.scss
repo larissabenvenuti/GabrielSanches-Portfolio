@@ -1,0 +1,79 @@
+$bg-color: #080d10;
+$primary-color: #00ffcc;
+$text-main: #e0f2f1;
+$text-muted: #4d9999;
+$text-light: #b0c4c4;
+$white: #ffffff;
+$border-hud: rgba(0, 255, 204, 0.2);
+$bg-panel: rgba(0, 255, 204, 0.03);
+$bg-dark: rgba(0, 0, 0, 0.5);
+$bg-darker: rgba(0, 0, 0, 0.3);
+$hud-hover: rgba(0, 255, 204, 0.05);
+$hud-active: rgba(0, 255, 204, 0.1);
+$hud-shadow: rgba(0, 255, 204, 0.5);
+
+$font-mono: "Courier New", Courier, monospace;
+
+@mixin laptop {
+  @media (max-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mobile-small {
+  @media (max-width: 380px) {
+    @content;
+  }
+}
+
+@mixin hud-subtitle {
+  color: $primary-color;
+  font-size: 0.9rem;
+  letter-spacing: 4px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+
+  @include tablet {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+  }
+  @include mobile {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+  }
+  @include mobile-small {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+  }
+}
+
+@mixin hud-title {
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: -1px;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  color: $white;
+
+  @include tablet {
+    font-size: 2.5rem;
+  }
+  @include mobile {
+    font-size: 2rem;
+  }
+  @include mobile-small {
+    font-size: 1.8rem;
+  }
+}
