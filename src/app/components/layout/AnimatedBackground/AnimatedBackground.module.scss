@@ -1,11 +1,12 @@
 @import "../../../../styles/variables";
 
 .backgroundContainer {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
+  height: 100dvh; 
   overflow: hidden;
   z-index: -1;
   pointer-events: none;  
@@ -23,16 +24,32 @@
     linear-gradient(90deg, $border-hud 1px, transparent 1px);
   background-size: 50px 50px;
   opacity: 0.9;
-  animation: panGrid 30s linear infinite;
+  animation: panGridDesktop 30s linear infinite;
+
+  @include tablet {
+    background-size: 40px 40px;
+    animation-name: panGridTablet;
+  }
+
+  @include mobile {
+    background-size: 30px 30px;
+    animation-name: panGridMobile;
+  }
 }
 
-@keyframes panGrid {
-  0% {
-    transform: translateY(0) translateX(0);
-  }
-  100% {
-    transform: translateY(50px) translateX(50px);
-  }
+@keyframes panGridDesktop {
+  0% { transform: translateY(0) translateX(0); }
+  100% { transform: translateY(50px) translateX(50px); }
+}
+
+@keyframes panGridTablet {
+  0% { transform: translateY(0) translateX(0); }
+  100% { transform: translateY(40px) translateX(40px); }
+}
+
+@keyframes panGridMobile {
+  0% { transform: translateY(0) translateX(0); }
+  100% { transform: translateY(30px) translateX(30px); }
 }
 
 .particlesContainer {
@@ -45,4 +62,8 @@
   position: absolute;
   background: $text-muted;
   border-radius: 2px;
+  
+  @include mobile {
+    transform: scale(0.8);
+  }
 }
