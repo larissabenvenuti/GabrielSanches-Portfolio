@@ -1,0 +1,338 @@
+@import "../../../../../styles/variables";
+
+.panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  padding: 5rem 10% 3rem 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include laptop {
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 6rem 8% 5rem 8%;
+    justify-content: flex-start;
+    scrollbar-width: thin;
+    scrollbar-color: $border-hud transparent;
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $border-hud;
+      border-radius: 4px;
+    }
+  }
+  @include tablet {
+    position: relative;
+    height: auto;
+    min-height: 100vh;
+    overflow-y: visible;
+    padding: 6rem 8% 5rem 8%;
+  }
+  @include mobile {
+    position: relative;
+    height: auto;
+    min-height: 100vh;
+    overflow-y: visible;
+    padding: 6rem 5% 6rem 5%;
+  }
+  @include mobile-small {
+    padding: 5rem 1rem 6rem 1rem;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  @include mobile-small {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+.simplifiedInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  @include mobile-small {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+}
+
+.subtitle {
+  @include hud-subtitle;
+  margin-bottom: 0;
+}
+
+.technicalInfo {
+  font-size: 0.65rem;
+  color: $text-muted;
+  letter-spacing: 1.5px;
+  font-family: $font-mono;
+}
+
+.systemStatus {
+  text-align: right;
+  font-size: 0.65rem;
+  color: $text-muted;
+  letter-spacing: 2px;
+  @include mobile-small {
+    text-align: left;
+  }
+}
+
+.title {
+  @include hud-title;
+  border-bottom: 1px solid $border-hud;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.systemStatus {
+  text-align: right;
+  font-size: 0.65rem;
+  color: $text-muted;
+  letter-spacing: 2px;
+  @include mobile-small {
+    text-align: left;
+  }
+}
+
+.layout {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+  height: 55vh;
+  max-height: 550px;
+  align-items: stretch;
+  @include laptop {
+    height: auto;
+    max-height: none;
+  }
+  @include tablet {
+    flex-direction: column;
+    height: auto;
+    max-height: none;
+    gap: 2rem;
+  }
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  flex-shrink: 0;
+  gap: 1.5rem;
+  @include tablet {
+    width: 100%;
+  }
+}
+
+.boxHeader {
+  display: flex;
+  justify-content: space-between;
+  color: $primary-color;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  margin-bottom: 0.8rem;
+  border-bottom: 1px solid $border-hud;
+  padding-bottom: 0.5rem;
+}
+
+.menuBox {
+  background: $bg-panel;
+  border-left: 2px solid $primary-color;
+  padding: 1.2rem;
+}
+
+.menuList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  max-height: 150px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: $border-hud transparent;
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $border-hud;
+    border-radius: 4px;
+  }
+}
+
+.menuBtn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: $text-muted;
+  text-align: left;
+  padding: 0.6rem 0.8rem;
+  font-family: $font-mono;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  .bracket {
+    opacity: 0;
+    color: $primary-color;
+    transition: opacity 0.3s ease;
+  }
+  &:hover {
+    background: $hud-hover;
+    color: $white;
+    border: 1px solid $border-hud;
+    .bracket {
+      opacity: 1;
+    }
+  }
+  &.activeBtn {
+    border: 1px solid $primary-color;
+    background: $hud-active;
+    color: $primary-color;
+    .bracket {
+      opacity: 1;
+    }
+  }
+}
+
+.descriptionBox {
+  background: $bg-darker;
+  border-left: 2px solid $primary-color;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  p {
+    color: $text-light;
+    line-height: 1.5;
+    text-align: justify;
+    font-size: 0.85rem;
+    margin: 0;
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+
+    scrollbar-width: thin;
+    scrollbar-color: $border-hud transparent;
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $border-hud;
+      border-radius: 4px;
+    }
+
+    @include laptop {
+      max-height: 200px;
+    }
+    @include tablet {
+      font-size: 0.9rem;
+      max-height: 180px;
+    }
+    @include mobile {
+      font-size: 0.85rem;
+      max-height: 150px;
+    }
+  }
+}
+
+.viewerContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.modelTitle {
+  font-size: 0.8rem;
+  color: $text-muted;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+  font-family: $font-mono;
+  @include mobile {
+    font-size: 0.75rem;
+  }
+}
+
+.viewerFrame {
+  flex: 1;
+  position: relative;
+  width: 100%;
+  border: 1px solid $border-hud;
+  background: $bg-dark;
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-top: 2px solid $primary-color;
+    border-left: 2px solid $primary-color;
+    z-index: 10;
+    pointer-events: none;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-bottom: 2px solid $primary-color;
+    border-right: 2px solid $primary-color;
+    z-index: 10;
+    pointer-events: none;
+  }
+  @include tablet {
+    min-height: 500px;
+  }
+  @include mobile {
+    min-height: 400px;
+  }
+  @include mobile-small {
+    min-height: 300px;
+  }
+}
+
+.sketchfabIframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 0.15) 50%,
+    rgba(0, 0, 0, 0.15)
+  );
+  background-size: 100% 4px;
+  z-index: 5;
+  pointer-events: none;
+}
